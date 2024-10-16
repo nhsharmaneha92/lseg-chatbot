@@ -1,0 +1,13 @@
+@if(selectedStock && selectedStock.topStocks) {
+    <div class="container">
+        <div class="header" [textContent]="header"></div>
+        <div class="content">
+            @for(data of selectedStock.topStocks ;track i; let i = $index ) {
+                @if(data?.stockName) {
+                    <div class="stock-name" [textContent]="data.stockName" (click)="stockSelected(data)"></div>
+                }
+            }
+        </div>
+    </div>
+}
+
